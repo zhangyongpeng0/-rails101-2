@@ -3,5 +3,9 @@ Rails.application.routes.draw do
    resources :groups do   #For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
      resources :posts
        end
-   root 'groups#index'
+
+       namespace :account do
+          resources :groups
+        end
+    root 'groups#index'
 end
